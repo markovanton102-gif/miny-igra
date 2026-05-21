@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import PlayButton from '../../components/PlayButton.astro';
+---
+
+<BaseLayout
+  title="Plinko — аналог Mines"
+  description="Plinko вместо Mines: шарик, ячейки и множители."
+>
+  <PageHero title="Plinko — альтернатива Mines" lead="Другая механика, но тот же instant-формат и быстрые раунды." />
+  <article class="content">
+    <div class="container">
+      <p><a href="/">← Вернуться к Mines</a></p>
+      <p><PlayButton /></p>
+    </div>
+  </article>
+</BaseLayout>

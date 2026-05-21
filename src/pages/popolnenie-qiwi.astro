@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PlayButton from '../components/PlayButton.astro';
+---
+
+<BaseLayout
+  title="Мины — пополнение QIWI"
+  description="Пополнение для игры Mines через QIWI и электронные кошельки где доступно."
+>
+  <PageHero
+    title="Mines — электронные кошельки"
+    lead="Доступность QIWI и аналогов зависит от площадки и региона. Проверяй кассу перед регистрацией."
+  />
+  <article class="content">
+    <div class="container">
+      <p>Если кошелёк доступен в кассе — пополни баланс и запусти Mines из каталога игр.</p>
+      <p><PlayButton /></p>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import PlayButton from '../../components/PlayButton.astro';
+---
+
+<BaseLayout
+  title="Spaceman — аналог Mines"
+  description="Spaceman — игра вместо Mines: crash с космонавтом, как играть онлайн."
+>
+  <PageHero title="Spaceman — альтернатива Mines" lead="Crash-формат: множитель растёт, нужно успеть забрать ставку." />
+  <article class="content">
+    <div class="container">
+      <p><a href="/">← Вернуться к Mines</a></p>
+      <p><PlayButton /></p>
+    </div>
+  </article>
+</BaseLayout>

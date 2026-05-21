@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PlayButton from '../components/PlayButton.astro';
+import { site } from '../config';
+---
+
+<BaseLayout
+  title="Мины — игра в онлайн-казино"
+  description="Mines: как играть, отзывы, демо и где играть на деньги. Обзор игры мины для казино онлайн."
+>
+  <PageHero
+    title="Мины (Mines) — игра в онлайн-казино"
+    lead="Mines — instant-игра: открываешь ячейки и забираешь выигрыш до «взрыва». Разбираем правила, тактики и где играть на реальные деньги."
+  />
+  <article class="content">
+    <div class="container">
+      <h2>Что такое Mines</h2>
+      <p>
+        Mines — формат crash/mines: на поле спрятаны мины, каждая безопасная ячейка увеличивает
+        множитель. Задача — остановиться вовремя и забрать выигрыш.
+      </p>
+      <h2>Разделы сайта</h2>
+      <div class="card-grid">
+        <div class="card"><a href="/otzyvy/">Отзывы игроков</a></div>
+        <div class="card"><a href="/kak-igrat/">Как играть и стратегии</a></div>
+        <div class="card"><a href="/skachat/">Скачать на телефон</a></div>
+        <div class="card"><a href="/demo/">Демо-режим</a></div>
+        <div class="card"><a href="/igrat-na-dengi/">Играть на деньги</a></div>
+        <div class="card"><a href="/gde-igrat/">Где играть онлайн</a></div>
+        <div class="card"><a href="/analogi/">Аналоги Mines</a></div>
+      </div>
+      <p><PlayButton /></p>
+    </div>
+  </article>
+</BaseLayout>
