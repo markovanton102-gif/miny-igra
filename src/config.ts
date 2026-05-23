@@ -8,6 +8,15 @@ export const site = {
 export const affiliateUrl =
   import.meta.env.PUBLIC_AFFILIATE_URL ?? 'https://example.com/ref';
 
+export const demoGameUrl =
+  import.meta.env.PUBLIC_DEMO_GAME_URL ??
+  'https://launch.mix4play.com/nextapi/launch/game/demo?auth=987b13dc-5bd4-487c-bef7-316ed17d9d28&game=pr_mines&project=tutu-prod&language=ru&platform=desktop&exit_url=https%3A%2F%2Fvgs-aff.top&cashier_url=https%3A%2F%2Fvgs-aff.top%2Fwlredirect%3Flink%3D%2Frefill';
+
+export const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL ?? '';
+export const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY ?? '';
+export const reviewsEnabled = Boolean(supabaseUrl && supabaseAnonKey);
+export const reviewsSiteSlug = 'miny-igra';
+
 export const nav = [
   { href: '/', label: 'Главная' },
   { href: '/otzyvy/', label: 'Отзывы' },
