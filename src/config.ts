@@ -14,8 +14,13 @@ export const demoGameUrl =
 
 export const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL ?? '';
 export const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY ?? '';
-export const reviewsEnabled = Boolean(supabaseUrl && supabaseAnonKey);
 export const reviewsSiteSlug = 'miny-igra';
+
+export const whereToPlay = [
+  { name: '1win', url: 'https://1wzpdo.life/v3/2158/1win-mines?p=7afk' },
+  { name: 'Vegas Grand', url: 'https://vgs-aff.top/r_b1s3wyA8xKoU' },
+  { name: 'GetX', url: 'https://lvlx.click/tcp9hs8hg' },
+] as const;
 
 export const nav = [
   { href: '/', label: 'Главная' },
