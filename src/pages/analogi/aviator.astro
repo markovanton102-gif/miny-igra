@@ -2,16 +2,58 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PlayButton from '../../components/PlayButton.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Аналоги Mines', path: '/analogi/' },
+  { name: 'Aviator', path: '/analogi/aviator/' },
+];
+
+const metaDescription =
+  'Aviator — аналог Mines: crash с самолётом, множитель и cash out. Самая известная альтернатива мины онлайн в нише crash.';
 ---
 
-<BaseLayout
-  title="Aviator — аналог Mines"
-  description="Aviator — игра вместо Mines, crash с самолётом."
->
-  <PageHero title="Aviator — альтернатива Mines" lead="Самый известный crash в нише. Высокая конкуренция в SEO." />
+<BaseLayout title="Aviator — аналог Mines" description={metaDescription} breadcrumbs={breadcrumbs}>
+  <PageHero
+    title="Aviator — альтернатива Mines"
+    lead="Классика crash от Spribe: самолёт уносит множитель вверх — заберите ставку до вылета из раунда."
+  />
   <article class="content">
     <div class="container">
-      <p><a href="/">← Вернуться к Mines</a></p>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        <strong>Aviator</strong> — самый узнаваемый <strong>аналог мины</strong> в категории crash. Запросы «авиатор
+        игра» и «aviator казино» часто идут рядом с «мины онлайн»: та же аудитория instant-игр, другая механика — без
+        поля с минами, зато с растущим коэффициентом и двойными ставками в одном раунде.
+      </p>
+
+      <h2>Как играть в Aviator</h2>
+      <p>
+        Делаете одну или две ставки, после старта множитель растёт вместе с анимацией самолёта. Нажимаете Cash Out —
+        получаете ставку × текущий коэффициент. Самолёт «улетел» — кто не успел вывести, проиграл. Есть авто-вывод по
+        заданному иксу и чат раунда (не влияет на RNG). Демо бывает у операторов; мины можно попробовать в
+        <a href="/demo/">нашем демо</a>.
+      </p>
+
+      <h2>Aviator или Mines</h2>
+      <ul>
+        <li><strong>Mines</strong> — контроль каждой ячейки, настройка числа мин.</li>
+        <li><strong>Aviator</strong> — фокус на одном решении «когда забрать»; выше хайп и конкуренция в поиске.</li>
+        <li>Обе — быстрые раунды; риск «передержать» раунд одинаков по смыслу.</li>
+      </ul>
+      <p>
+        Похожие crash: <a href="/analogi/spaceman/">Spaceman</a>, <a href="/analogi/pilot/">Pilot</a>. Вернуться к минам:
+        <a href="/kak-igrat/">как играть</a>, <a href="/gde-igrat/">где играть</a>.
+      </p>
+
+      <h2>Где играть в Aviator</h2>
+      <p>
+        Aviator есть у большинства крупных казино с instant-каталогом. Проверяйте лицензию, лимиты и скорость выплат.
+        Не доверяйте «сигналам» и ботам в мессенджерах — результат раунда случаен. 18+, ответственная игра.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

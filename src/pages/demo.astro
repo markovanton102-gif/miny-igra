@@ -3,23 +3,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PlayButton from '../components/PlayButton.astro';
 import GameDemo from '../components/GameDemo.astro';
+
+const metaDescription =
+  'Mines демо бесплатно: играть в мины онлайн без депозита, потренировать Mines+ и кнопку «Вывод». Виртуальный баланс, те же правила, что на деньги.';
 ---
 
-<BaseLayout
-  title="Mines — демо бесплатно"
-  description="Mines демо: играть бесплатно, потренироваться без депозита."
->
+<BaseLayout title="Мины — демо бесплатно" description={metaDescription}>
   <PageHero
-    title="Mines — демо-режим"
-    lead="Играйте бесплатно прямо на странице. На реальные деньги переходите только с готовым лимитом по банкроллу."
+    title="Мины — демо-режим"
+    lead="Бесплатная игра Mines+ прямо на этой странице — окно ниже. Без регистрации и депозита, виртуальный баланс."
+    showPlayButton={false}
   />
+  <section class="demo-screen" aria-label="Демо-игра Mines">
+    <div class="container">
+      <GameDemo title="Mines+" priority />
+    </div>
+  </section>
   <article class="content">
     <div class="container">
-      <GameDemo title="Mines+" />
-
+      <h2>Демо мины: зачем играть бесплатно</h2>
       <p>
-        В демо можно отработать, сколько ячеек открывать за раунд, без риска для баланса.
+        <strong>Mines демо</strong> — тот же клиент instant-игры, но ставки списываются с учебного счёта. Удобно
+        понять, как растёт множитель, где кнопка <strong>«Вывод»</strong> и как ощущается поле при 3, 5 или 10
+        минах. Запросы «<strong>мины демо</strong>» и «<strong>mines играть бесплатно</strong>» как раз про такой
+        режим без риска для кошелька.
       </p>
+
+      <h2>Что потренировать в демо Mines+</h2>
+      <ul>
+        <li>выбор суммы ставки и числа мин на поле;</li>
+        <li>открытие ячеек по одной или через «Случайно»;</li>
+        <li>момент фиксации выигрыша — не тянуть до «ещё одной» клетки;</li>
+        <li>интерфейс с телефона и с ПК (если сужаете окно браузера).</li>
+      </ul>
+      <p>
+        Подробные правила и скриншоты кнопок — в разделе <a href="/kak-igrat/">как играть в Mines</a>. Отзывы
+        игроков — на странице <a href="/otzyvy/">отзывы</a>.
+      </p>
+
+      <h2>Демо и игра на деньги: в чём разница</h2>
+      <p>
+        Механика раунда совпадает, меняется только баланс: в демо — виртуальные фишки, в казино — реальный депозит.
+        Переход на деньги имеет смысл после лимита по банкроллу и возраста 18+. Шаги — в
+        <a href="/igrat-na-dengi/">играть на деньги</a>, площадки — в <a href="/gde-igrat/">где играть</a>.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

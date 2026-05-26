@@ -2,19 +2,50 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PlayButton from '../components/PlayButton.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const metaDescription =
+  'Пополнение Mines через QIWI и электронные кошельки: депозит в казино, доступность по региону и запуск мины онлайн.';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Пополнение QIWI', path: '/popolnenie-qiwi/' },
+];
 ---
 
 <BaseLayout
   title="Мины — пополнение QIWI"
-  description="Пополнение для игры Mines через QIWI и электронные кошельки где доступно."
+  description={metaDescription}
+  breadcrumbs={breadcrumbs}
 >
   <PageHero
     title="Mines — электронные кошельки"
-    lead="Доступность QIWI и аналогов зависит от площадки и региона. Проверяй кассу перед регистрацией."
+    lead="QIWI и аналоги доступны не на всех площадках. Перед регистрацией откройте кассу и проверьте список методов."
   />
   <article class="content">
     <div class="container">
-      <p>Если кошелёк доступен в кассе — пополни баланс и запусти Mines из каталога игр.</p>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        Запрос «<strong>мины пополнение QIWI</strong>» актуален, пока оператор принимает этот метод. Доступность зависит
+        от страны, лицензии казино и политики платёжного провайдера — список в кассе всегда актуальнее обзоров.
+      </p>
+
+      <h2>Как пополнить через QIWI и играть в Mines</h2>
+      <ol>
+        <li>Зарегистрируйтесь на сайте из <a href="/gde-igrat/">где играть</a>.</li>
+        <li>В разделе депозита найдите QIWI, ЮMoney или другой кошелёк из списка.</li>
+        <li>Укажите сумму, подтвердите платёж в приложении кошелька.</li>
+        <li>После зачисления откройте <strong>Mines</strong> / <strong>Mines+</strong> в каталоге.</li>
+      </ol>
+
+      <h2>Если QIWI нет в кассе</h2>
+      <p>
+        Используйте <a href="/popolnenie-kartoy/">карту</a> или <a href="/popolnenie-usdt/">USDT</a>. Для первого знакомства
+        с механикой — <a href="/demo/">бесплатное демо</a> без депозита. Игра на деньги:
+        <a href="/igrat-na-dengi/">пошаговый гайд</a>. 18+, ответственная игра.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

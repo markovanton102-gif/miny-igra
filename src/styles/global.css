@@ -61,10 +61,17 @@ img {
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+  line-height: 0;
+}
+
+.logo-img {
+  display: block;
+  width: auto;
+  height: 3.25rem;
+  max-width: min(13rem, 48vw);
 }
 
 .nav {
@@ -95,16 +102,56 @@ img {
   padding: 2.5rem 0 2rem;
 }
 
+.hero:has(+ .demo-screen) {
+  padding-bottom: 1rem;
+}
+
+.demo-screen {
+  padding: 0 0 1.25rem;
+}
+
+.demo-screen .game-demo {
+  margin: 0;
+}
+
 .hero h1 {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   line-height: 1.25;
   margin: 0 0 1rem;
 }
 
+.hero-figure {
+  margin: 0 0 1.25rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  max-width: 36rem;
+}
+
+.hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
 .hero p {
   color: var(--muted);
   margin: 0 0 1.5rem;
   max-width: 60ch;
+}
+
+.hero-cta {
+  margin: 0 0 0.5rem;
+}
+
+.download-cta-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .btn-play {
@@ -137,8 +184,45 @@ img {
   color: var(--muted);
 }
 
-.content ul {
+.content ul,
+.content ol {
   padding-left: 1.25rem;
+}
+
+.content .article-lead {
+  font-size: 1.05rem;
+  color: var(--text);
+  max-width: 70ch;
+}
+
+.content dl.faq-list {
+  margin: 1rem 0 0;
+}
+
+.content dl.faq-list dt {
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1.25rem;
+}
+
+.content dl.faq-list dt:first-child {
+  margin-top: 0;
+}
+
+.content dl.faq-list dd {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.where-intro {
+  margin: 0 0 1rem;
+  max-width: 65ch;
+}
+
+.card p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 .card-grid {
@@ -165,6 +249,56 @@ img {
   padding: 2rem 0;
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+  color: var(--text);
+}
+
+.breadcrumbs {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: '/';
+  margin-left: 0.5rem;
+  color: var(--border);
+}
+
+.breadcrumbs a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--text);
+}
+
+.breadcrumbs [aria-current='page'] {
+  color: var(--text);
 }
 
 .disclaimer {
@@ -400,5 +534,69 @@ img {
 .reviews-empty {
   color: var(--muted);
   list-style: none;
+}
+
+.article-guide .article-lead {
+  font-size: 1.05rem;
+  color: var(--text);
+  max-width: 70ch;
+}
+
+.article-guide h3 {
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--text);
+}
+
+.article-figure {
+  margin: 1.75rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.article-figure figcaption {
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+  border-top: 1px solid var(--border);
+}
+
+.article-faq {
+  margin: 0;
+}
+
+.article-faq dt {
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.25rem 0 0.35rem;
+}
+
+.article-faq dt:first-child {
+  margin-top: 0;
+}
+
+.article-faq dd {
+  margin: 0 0 0.5rem;
+  padding-left: 0;
+  color: var(--muted);
+}
+
+.article-disclaimer {
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
 }
 

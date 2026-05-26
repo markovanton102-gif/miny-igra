@@ -2,30 +2,59 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PlayButton from '../components/PlayButton.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const metaDescription =
+  'Играть в Mines (мины) на реальные деньги: регистрация 18+, депозит, поиск Mines+ в казино и ответственный банкролл. Пошаговый старт онлайн.';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Играть на деньги', path: '/igrat-na-dengi/' },
+];
 ---
 
 <BaseLayout
   title="Мины — играть на деньги"
-  description="Играть в Mines на реальные деньги: регистрация, депозит и старт игры онлайн."
+  description={metaDescription}
+  breadcrumbs={breadcrumbs}
 >
   <PageHero
     title="Играть в Mines на деньги"
-    lead="Чтобы играть на реальные деньги, нужна регистрация на площадке с этой игрой в каталоге и пополнение счёта."
+    lead="Реальные ставки доступны после регистрации на площадке с Mines в каталоге. Ниже — порядок действий и ссылки на пополнение."
   />
   <article class="content">
     <div class="container">
-      <h2>Как начать</h2>
-      <ol>
-        <li>Выбери площадку с Mines в каталоге instant-игр.</li>
-        <li>Зарегистрируйся (18+).</li>
-        <li>Пополни счёт удобным способом.</li>
-        <li>Найди Mines в разделе игр и сделай ставку.</li>
-      </ol>
-      <p>
-        Способы пополнения:
-        <a href="/popolnenie-kartoy/">карта</a>,
-        <a href="/popolnenie-usdt/">USDT</a>.
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        Запросы «<strong>мины на деньги</strong>» и «<strong>mines играть на реальные деньги</strong>» ведут к тому же:
+        instant-игра Mines / Mines+ в онлайн-казино с депозитом. Сначала имеет смысл
+        <a href="/demo/">демо</a> и <a href="/kak-igrat/">правила</a> — так вы поймёте кнопку «Вывод» и риск по числу
+        мин без потери баланса.
       </p>
+
+      <h2>Как начать играть в мины на деньги</h2>
+      <ol>
+        <li>Выберите площадку из раздела <a href="/gde-igrat/">где играть</a> — нужен Mines в каталоге instant-игр.</li>
+        <li>Зарегистрируйтесь (18+), подтвердите контакты при необходимости.</li>
+        <li>Пополните счёт: <a href="/popolnenie-kartoy/">картой</a>, <a href="/popolnenie-usdt/">USDT</a> или
+          <a href="/popolnenie-qiwi/">QIWI</a>, если доступно у оператора.</li>
+        <li>Найдите в поиске <strong>Mines</strong> или <strong>Mines+</strong>, задайте ставку и число мин.</li>
+        <li>Играйте с лимитом на сессию — фиксируйте выигрыш кнопкой «Вывод», не «догоняйте» проигрыш.</li>
+      </ol>
+
+      <h2>На что обратить внимание</h2>
+      <ul>
+        <li>лимиты минимального и максимального депозита и ставки;</li>
+        <li>скорость вывода и верификация (KYC);</li>
+        <li>участвуют ли instant-игры в отыгрыше бонуса;</li>
+        <li>мобильное приложение или браузер — <a href="/skachat/">скачать</a> клиент казино.</li>
+      </ul>
+      <p>
+        Мнения игроков о площадках — в <a href="/otzyvy/">отзывах</a>. Азартные игры 18+: ставьте только те деньги,
+        которые готовы потерять.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

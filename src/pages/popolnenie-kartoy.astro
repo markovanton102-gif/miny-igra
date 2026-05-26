@@ -2,20 +2,54 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PlayButton from '../components/PlayButton.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const metaDescription =
+  'Пополнение для игры Mines картой Visa и Mastercard: депозит в казино, поиск Mines+ и старт раунда. Альтернативы — USDT и кошельки.';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Пополнение картой', path: '/popolnenie-kartoy/' },
+];
 ---
 
 <BaseLayout
   title="Мины — пополнение картой"
-  description="Играть в Mines через карту Visa Mastercard: пополнение и старт игры."
+  description={metaDescription}
+  breadcrumbs={breadcrumbs}
 >
   <PageHero
     title="Mines — пополнение банковской картой"
-    lead="Карта остаётся популярным способом депозита там, где банки не блокируют транзакции в гемблинг."
+    lead="Карта остаётся популярным способом депозита там, где банки пропускают платежи в онлайн-казино."
   />
   <article class="content">
     <div class="container">
-      <p>После пополнения картой найди Mines в каталоге instant-игр и сделай ставку.</p>
-      <p>Альтернатива: <a href="/popolnenie-usdt/">пополнение USDT</a>.</p>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        Чтобы <strong>играть в мины на деньги</strong> после пополнения картой, нужен аккаунт на площадке с Mines в
+        каталоге. Сайт не принимает платежи — депозит проходит в кассе выбранного оператора.
+      </p>
+
+      <h2>Как пополнить счёт картой и открыть Mines</h2>
+      <ol>
+        <li>Зарегистрируйтесь на площадке из списка <a href="/gde-igrat/">где играть</a> (18+).</li>
+        <li>Откройте «Кассу» / «Депозит», выберите Visa или Mastercard.</li>
+        <li>Укажите сумму в пределах лимитов оператора, подтвердите 3-D Secure при запросе банка.</li>
+        <li>После зачисления найдите <strong>Mines</strong> или <strong>Mines+</strong> в instant-играх.</li>
+      </ol>
+
+      <h2>Если карта не проходит</h2>
+      <p>
+        Банки в РФ и СНГ иногда блокируют гемблинг-транзакции. Альтернативы: <a href="/popolnenie-usdt/">USDT</a>,
+        <a href="/popolnenie-qiwi/">электронные кошельки</a> (если есть в кассе). Перед крупным депозитом проверьте
+        правила вывода и верификацию.
+      </p>
+      <p>
+        Новым игрокам: <a href="/demo/">демо Mines</a>, затем <a href="/igrat-na-dengi/">игра на деньги</a> с лимитом
+        по банкроллу.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

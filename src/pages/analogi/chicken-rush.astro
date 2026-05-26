@@ -2,16 +2,57 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PlayButton from '../../components/PlayButton.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Аналоги Mines', path: '/analogi/' },
+  { name: 'Chicken Rush', path: '/analogi/chicken-rush/' },
+];
+
+const metaDescription =
+  'Chicken Rush — аналог Mines: instant-игра с курицей, шаги и множитель. Чем отличается от мины онлайн и где играть.';
 ---
 
-<BaseLayout
-  title="Chicken Rush — аналог Mines"
-  description="Chicken Rush — instant-игра, альтернатива Mines."
->
-  <PageHero title="Chicken Rush — альтернатива Mines" lead="Трендовая instant-игра с простой механикой." />
+<BaseLayout title="Chicken Rush — аналог Mines" description={metaDescription} breadcrumbs={breadcrumbs}>
+  <PageHero
+    title="Chicken Rush — альтернатива Mines"
+    lead="Трендовая instant-игра: курица продвигается по дороге, растёт множитель — заберите выигрыш до опасного шага."
+  />
   <article class="content">
     <div class="container">
-      <p><a href="/">← Вернуться к Mines</a></p>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        <strong>Chicken Rush</strong> (и похожие «курица»-игры) часто ставят в один ряд с <strong>аналогами мины</strong>:
+        короткий раунд, растущий коэффициент и риск потерять ставку, если «зажать» слишком долго. Визуально это не
+        сетка 5×5, а линейные шаги или уровни — но психология похожа на Mines: забрать сейчас или рискнуть дальше.
+      </p>
+
+      <h2>Механика Chicken Rush</h2>
+      <p>
+        Ставка → серия шагов / уровней → с каждым успешным шагом множитель выше → в любой момент можно остановиться и
+        вывести выигрыш → на «плохом» шаге раунд проигран. Точные правила зависят от версии в казино (InOut и др.),
+        поэтому перед деньгами откройте справку в клиенте.
+      </p>
+
+      <h2>Chicken Rush и Mines</h2>
+      <ul>
+        <li><strong>Mines</strong> — поле ячеек, выбор числа мин, открытие клеток.</li>
+        <li><strong>Chicken Rush</strong> — сюжет с курицей, шаги вместо сетки; тот же instant-темп.</li>
+        <li>Обе игры требуют дисциплины: «ещё один шаг» часто заканчивается проигрышем.</li>
+      </ul>
+      <p>
+        Сравнить с классикой: <a href="/demo/">демо Mines</a>. Другие форматы — <a href="/analogi/plinko/">Plinko</a>,
+        crash: <a href="/analogi/aviator/">Aviator</a>. Полный список — <a href="/analogi/">аналоги Mines</a>.
+      </p>
+
+      <h2>Где играть в Chicken Rush</h2>
+      <p>
+        В поиске казино: Chicken Rush, Chicken Road и т.п. — названия могут различаться. Смотрите
+        <a href="/gde-igrat/">где играть</a> и отзывы на <a href="/otzyvy/">странице отзывов</a>. 18+.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

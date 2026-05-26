@@ -2,16 +2,57 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PlayButton from '../../components/PlayButton.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Аналоги Mines', path: '/analogi/' },
+  { name: 'Spaceman', path: '/analogi/spaceman/' },
+];
+
+const metaDescription =
+  'Spaceman — аналог Mines: crash с космонавтом, растущий множитель и вывод ставки. Чем отличается от мины и где играть онлайн.';
 ---
 
-<BaseLayout
-  title="Spaceman — аналог Mines"
-  description="Spaceman — игра вместо Mines: crash с космонавтом, как играть онлайн."
->
-  <PageHero title="Spaceman — альтернатива Mines" lead="Crash-формат: множитель растёт, нужно успеть забрать ставку." />
+<BaseLayout title="Spaceman — аналог Mines" description={metaDescription} breadcrumbs={breadcrumbs}>
+  <PageHero
+    title="Spaceman — альтернатива Mines"
+    lead="Crash от Pragmatic Play: коэффициент растёт вместе с полётом космонавта — нужно забрать ставку до краша."
+  />
   <article class="content">
     <div class="container">
-      <p><a href="/">← Вернуться к Mines</a></p>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        <strong>Spaceman</strong> часто рекомендуют как <strong>аналог мины</strong>, если нравится напряжение раунда, но
+        надоело открывать клетки на сетке. Это <strong>crash-игра</strong>: множитель идёт вверх сам, вы только решаете,
+        когда нажать «Забрать» (Cash Out).
+      </p>
+
+      <h2>Как играть в Spaceman</h2>
+      <p>
+        Делаете ставку на раунд, после старта коэффициент растёт (космонавт «летит»). Можно вывести всю ставку или
+        часть (в зависимости от версии клиента) до момента, когда раунд обрывается. Не успели — ставка проиграна.
+        Раунды короткие, в лобби часто видна история последних крашей — не путайте её с «подсказкой» на будущее.
+      </p>
+
+      <h2>Spaceman и Mines: сравнение</h2>
+      <ul>
+        <li><strong>Mines</strong> — вы выбираете ячейки на поле; контроль пошаговый.</li>
+        <li><strong>Spaceman</strong> — темп задаёт игра; акцент на тайминге одной кнопки вывода.</li>
+        <li>Обе — instant-формат, мобильный браузер и приложения казино, демо у части операторов.</li>
+      </ul>
+      <p>
+        Кому ближе мины — <a href="/kak-igrat/">правила Mines</a> и <a href="/demo/">демо</a>. Другие crash-альтернативы:
+        <a href="/analogi/aviator/">Aviator</a>, <a href="/analogi/pilot/">Pilot</a>.
+      </p>
+
+      <h2>Где играть в Spaceman</h2>
+      <p>
+        Ищите в каталоге казино по названию, раздел Crash / Instant. Те же площадки, что для Mines+ — см.
+        <a href="/gde-igrat/">где играть</a>. 18+, ответственный банкролл.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

@@ -2,16 +2,57 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PlayButton from '../../components/PlayButton.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Аналоги Mines', path: '/analogi/' },
+  { name: 'Plinko', path: '/analogi/plinko/' },
+];
+
+const metaDescription =
+  'Plinko — аналог Mines: шарик, кегли и множители внизу. Чем Plinko отличается от игры мины и когда выбрать instant-слот.';
 ---
 
-<BaseLayout
-  title="Plinko — аналог Mines"
-  description="Plinko вместо Mines: шарик, ячейки и множители."
->
-  <PageHero title="Plinko — альтернатива Mines" lead="Другая механика, но тот же instant-формат и быстрые раунды." />
+<BaseLayout title="Plinko — аналог Mines" description={metaDescription} breadcrumbs={breadcrumbs}>
+  <PageHero
+    title="Plinko — альтернатива Mines"
+    lead="Шарик падает по полю с кеглями и попадает в ячейку с множителем — другая механика, тот же быстрый instant-формат."
+  />
   <article class="content">
     <div class="container">
-      <p><a href="/">← Вернуться к Mines</a></p>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        <strong>Plinko</strong> — популярная <strong>аналог мины</strong> по запросам вроде «игра как мины, но проще».
+        Здесь нет поля с минами: вы запускаете шарик (или несколько), он случайно отскакивает от кеглей и приземляется в
+        слот с коэффициентом x2, x10 и выше.
+      </p>
+
+      <h2>Механика Plinko</h2>
+      <p>
+        Ставка → запуск → шарик падает → результат по ячейке внизу. Часто можно менять уровень риска (число рядов кеглей
+        или распределение множителей). Раунд занимает секунды, удобно с телефона. В отличие от Mines, вы не решаете,
+        какую клетку открыть — только параметры риска и размер ставки.
+      </p>
+
+      <h2>Plinko или Mines: что выбрать</h2>
+      <ul>
+        <li><strong>Mines</strong> — тактика «ещё одна ячейка» и кнопка «Вывод» в любой момент.</li>
+        <li><strong>Plinko</strong> — один бросок, результат сразу; меньше микрорешений, больше «чистой» случайности.</li>
+        <li>Обе игры ищут в instant-разделе того же казино, что и <a href="/gde-igrat/">Mines+</a>.</li>
+      </ul>
+      <p>
+        Вернуться к минам: <a href="/demo/">демо Mines</a>, <a href="/kak-igrat/">как играть</a>. Другие альтернативы —
+        <a href="/analogi/">список аналогов</a>, crash: <a href="/analogi/aviator/">Aviator</a>.
+      </p>
+
+      <h2>Где играть в Plinko онлайн</h2>
+      <p>
+        Plinko есть у Spribe, BGaming и других провайдеров — названия в поиске казино могут отличаться (Plinko, Plinko XY).
+        Проверяйте демо и лимиты ставок перед депозитом. 18+.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

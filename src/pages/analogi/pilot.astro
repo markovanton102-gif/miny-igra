@@ -2,16 +2,58 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PlayButton from '../../components/PlayButton.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Главная', path: '/' },
+  { name: 'Аналоги Mines', path: '/analogi/' },
+  { name: 'Pilot', path: '/analogi/pilot/' },
+];
+
+const metaDescription =
+  'Pilot — аналог Mines: crash «пилот» в СНГ, растущий множитель и вывод ставки. Сравнение с мины и Aviator онлайн.';
 ---
 
-<BaseLayout
-  title="Pilot — аналог Mines"
-  description="Pilot crash — альтернатива игре Mines онлайн."
->
-  <PageHero title="Pilot — альтернатива Mines" lead="Популярный crash-слот в СНГ, часто ищут как «пилот игра»." />
+<BaseLayout title="Pilot — аналог Mines" description={metaDescription} breadcrumbs={breadcrumbs}>
+  <PageHero
+    title="Pilot — альтернатива Mines"
+    lead="Crash-слот в стиле «пилот»: коэффициент растёт, пока не оборвётся раунд — популярен по запросу «пилот игра»."
+  />
   <article class="content">
     <div class="container">
-      <p><a href="/">← Вернуться к Mines</a></p>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <p class="article-lead">
+        <strong>Pilot</strong> — типичный представитель <strong>crash</strong>-ниши и частый <strong>аналог мины</strong>
+        для игроков из России и СНГ. Механика близка к Aviator: ставка, рост множителя, кнопка вывода до краша. Поля
+        5×5 с минами здесь нет.
+      </p>
+
+      <h2>Как устроен Pilot</h2>
+      <p>
+        После ставки множитель увеличивается в реальном времени. Задача — забрать выигрыш до обрыва раунда. Можно
+        играть двумя ставками в одном раунде (в зависимости от клиента). История коэффициентов на экране — статистика
+        прошлых раундов, а не гарантия будущего икса.
+      </p>
+
+      <h2>Pilot vs Mines</h2>
+      <ul>
+        <li><strong>Mines</strong> — пошаговое открытие ячеек, вы сами задаёте темп.</li>
+        <li><strong>Pilot</strong> — единый «полёт» множителя, стресс от тайминга вывода.</li>
+        <li>Если нравится Pilot, часто зайдут <a href="/analogi/aviator/">Aviator</a> и
+          <a href="/analogi/spaceman/">Spaceman</a>.</li>
+      </ul>
+      <p>
+        Хотите вернуться к сетке и минам — <a href="/demo/">демо Mines+</a> и <a href="/kak-igrat/">инструкция</a>.
+        Площадки — <a href="/gde-igrat/">где играть</a>.
+      </p>
+
+      <h2>Где найти Pilot в казино</h2>
+      <p>
+        Ищите в разделе Crash / Instant или по слову Pilot. Доступность зависит от гео и провайдера оператора. Играйте
+        только 18+ на лицензированных сайтах.
+      </p>
+
       <p><PlayButton /></p>
     </div>
   </article>

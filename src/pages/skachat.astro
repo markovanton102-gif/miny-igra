@@ -2,25 +2,55 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PlayButton from '../components/PlayButton.astro';
+import ApkDownloadButton from '../components/ApkDownloadButton.astro';
+
+const metaDescription =
+  'Скачать Mines (мины) на Android и iPhone: APK приложения казино, браузер и ярлык на главный экран. Как установить и играть в Mines+ с телефона.';
 ---
 
-<BaseLayout
-  title="Мины — скачать на Android и iPhone"
-  description="Скачать Mines на телефон: Android, iPhone, игра в браузере и через приложение казино."
->
+<BaseLayout title="Мины — скачать на Android и iPhone" description={metaDescription}>
   <PageHero
     title="Скачать Mines на телефон"
-    lead="Чаще Mines доступна в мобильном браузере или в приложении онлайн-казино — отдельный APK встречается реже."
+    lead="Отдельной «игры мины» в Store почти нет — Mines и Mines+ открываются в приложении казино или в мобильном браузере. На Android ниже — кнопка загрузки APK 1win с доступом к Mines."
+    showPlayButton={false}
+    showApkButton={true}
   />
   <article class="content">
     <div class="container">
-      <h2>Android</h2>
-      <p>Открой сайт казино в Chrome — добавь на главный экран или используй официальное приложение оператора.</p>
-      <h2>iPhone (iOS)</h2>
-      <p>В Safari — игра в браузере; в App Store приложения казино зависят от региона.</p>
-      <h2>Компьютер</h2>
-      <p>Достаточно браузера, скачивание клиента обычно не требуется.</p>
-      <p><PlayButton /></p>
+      <h2>Скачать мины на Android</h2>
+      <p>
+        Самый частый вариант — <strong>APK приложения казино</strong>: после установки в каталоге instant-игр
+        находите Mines или Mines+. Альтернатива — сайт оператора в Chrome и пункт «Добавить на главный экран» (ярлык
+        без установки магазина). Перед загрузкой APK разрешите установку из неизвестных источников в настройках
+        телефона и скачивайте только с официальной ссылки оператора.
+      </p>
+
+      <h2>Mines на iPhone (iOS)</h2>
+      <p>
+        В App Store приложения казино зависят от региона и политики Apple. Чаще игроки открывают
+        <strong>Mines в Safari</strong> — полноэкранный режим и ярлык на домашний экран работают так же удобно, как
+        у многих PWA. Отдельного «скачать mines для айфона» от провайдера игры обычно не существует — нужен аккаунт
+        на площадке с этой игрой в каталоге.
+      </p>
+
+      <h2>Игра на компьютере</h2>
+      <p>
+        На ПК отдельный клиент Mines не требуется: достаточно браузера на сайте казино. Те же правила и интерфейс,
+        что в мобильной версии. Подробнее о механике — в разделе <a href="/kak-igrat/">как играть</a>, бесплатная
+        проверка — в <a href="/demo/">демо</a>.
+      </p>
+
+      <h2>Безопасность и 18+</h2>
+      <p>
+        Устанавливайте только проверенные приложения, не переходите по сомнительным «взломанным» APK из чатов. Игра
+        18+, ответственный подход к депозиту. Список площадок с Mines — на странице
+        <a href="/gde-igrat/">где играть</a>.
+      </p>
+
+      <p class="download-cta-secondary">
+        <ApkDownloadButton />
+        <PlayButton />
+      </p>
     </div>
   </article>
 </BaseLayout>
