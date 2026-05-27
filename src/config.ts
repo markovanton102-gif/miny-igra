@@ -21,9 +21,28 @@ export const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY ?? "";
 export const reviewsSiteSlug = "miny-igra";
 
 export const whereToPlay = [
-  { name: "1win", url: "https://1wzpdo.life/v3/2158/1win-mines?p=7afk" },
-  { name: "Vegas Grand", url: "https://vgs-aff.top/r_b1s3wyA8xKoU" },
-  { name: "GetX", url: "https://lvlx.click/tcp9hs8hg" },
+  {
+    name: "1win",
+    url: "https://1wzpdo.life/v3/2158/1win-mines?p=7afk",
+    desc: "Mines и Mines+ в каталоге, прямой переход на игру мин.",
+    icon: "💣",
+    perks: ["Mines+ в instant-разделе", "APK для Android", "Карта, USDT, QIWI"],
+    featured: true,
+  },
+  {
+    name: "Vegas Grand",
+    url: "https://vgs-aff.top/r_b1s3wyA8xKoU",
+    desc: "Казино с instant-играми и демо-режимом у оператора.",
+    icon: "🎰",
+    perks: ["Mines в поиске лобби", "Мобильная версия", "Пополнение и вывод"],
+  },
+  {
+    name: "GetX",
+    url: "https://lvlx.click/tcp9hs8hg",
+    desc: "Быстрый старт: регистрация и instant-игры в одном месте.",
+    icon: "⚡",
+    perks: ["Instant-игры", "Игра с телефона", "Бонусы новичкам"],
+  },
 ] as const;
 
 export const nav = [

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PlayButton from '../../components/PlayButton.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnalogGrid, { type AnalogSection } from '../../components/AnalogGrid.astro';
 
 const breadcrumbs = [
   { name: 'Главная', path: '/' },
@@ -10,79 +11,93 @@ const breadcrumbs = [
 ];
 
 const metaDescription =
-  'Аналоги Mines (мины): Spaceman, Plinko, Pilot, Aviator, Chicken Rush — instant и crash-игры с похожим риском и множителями. Сравнение с мины онлайн.';
+  'Аналоги Mines (мины): Aviator, Spaceman, Pilot, Plinko, Chicken Rush — instant и crash-игры. Сравнение с мины онлайн.';
 
-const analogs = [
-  { href: '/analogi/spaceman/', title: 'Spaceman', desc: 'Космический crash, множитель растёт до «взлёта»' },
-  { href: '/analogi/plinko/', title: 'Plinko', desc: 'Шарик и множители внизу поля' },
-  { href: '/analogi/pilot/', title: 'Pilot', desc: 'Crash в стиле «пилот», популярен в СНГ' },
-  { href: '/analogi/chicken-rush/', title: 'Chicken Rush', desc: 'Instant-игра с курицей и шагами' },
-  { href: '/analogi/aviator/', title: 'Aviator', desc: 'Классика crash с самолётом' },
+const analogSections: AnalogSection[] = [
+  {
+    id: 'analog-crash-heading',
+    heading: 'Crash — другой тип риска',
+    lead: 'Множитель растёт сам — одна кнопка «забрать» до вылета. Не поле с ячейками, как в Mines, но тот же темп сессии.',
+    items: [
+      {
+        href: '/analogi/aviator/',
+        title: 'Aviator',
+        tag: 'Crash',
+        icon: '✈️',
+        variant: 'crash',
+        desc: 'Самолёт и cash out — классика crash. Самый узнаваемый аналог мины в поиске.',
+      },
+      {
+        href: '/analogi/spaceman/',
+        title: 'Spaceman',
+        tag: 'Crash',
+        icon: '🚀',
+        variant: 'crash',
+        desc: 'Космонавт, растущий коэффициент. Напряжение «ещё секунда» — как при жадности в минах.',
+      },
+      {
+        href: '/analogi/pilot/',
+        title: 'Pilot',
+        tag: 'Crash',
+        icon: '🛩️',
+        variant: 'crash',
+        desc: 'Пилот краш в СНГ. Та же схема вывода до обрыва раунда.',
+      },
+    ],
+  },
+  {
+    id: 'analog-instant-heading',
+    heading: 'Instant — без crash-вылета',
+    lead: 'Другая механика случайности: шарик или пошаговый риск вместо сетки 5×5.',
+    items: [
+      {
+        href: '/analogi/plinko/',
+        title: 'Plinko',
+        tag: 'Instant',
+        icon: '🎯',
+        variant: 'instant',
+        desc: 'Шарик по кеглям — множитель в слоте внизу. Один запуск, результат сразу.',
+      },
+      {
+        href: '/analogi/chicken-rush/',
+        title: 'Chicken Rush',
+        tag: 'Instant',
+        icon: '🐔',
+        variant: 'instant',
+        desc: 'Трендовая instant с простыми правилами. Другой сеттинг после Mines+.',
+      },
+    ],
+  },
 ];
 ---
 
 <BaseLayout title="Аналоги Mines" description={metaDescription} breadcrumbs={breadcrumbs}>
   <PageHero
+    showPlayButton={false}
     title="Аналоги игры Mines"
-    lead="Если Mines+ надоел или хочется другой темп — ниже instant- и crash-игры из того же каталога казино. Карточки ведут на обзоры каждой альтернативы."
+    lead="Выберите игру — карточка целиком ведёт на обзор: отличия от мин и когда переключиться имеет смысл."
   />
-  <article class="content">
+  <article class="content content--analogi">
     <div class="container">
       <Breadcrumbs items={breadcrumbs} />
-      <h2 id="spisok">Игры похожие на мины</h2>
-      <div class="card-grid">
-        {
-          analogs.map((a) => (
-            <div class="card">
-              <a href={a.href}>{a.title}</a>
-              <p>{a.desc}</p>
-            </div>
-          ))
-        }
-      </div>
 
       <p class="article-lead">
-        <strong>Mines</strong> — не единственная instant-игра в казино. Игроки ищут <strong>аналоги мины</strong>, когда
-        хотят сменить механику, но сохранить короткие раунды и работу с множителем. Часть альтернатив ближе к
-        <strong>crash</strong> (растущий коэффициент и одна кнопка «забрать»), часть — к другим instant-форматам вроде
-        Plinko или Chicken Rush.
+        <strong>Аналоги Mines</strong> (мины) — crash и instant из того же каталога казино. Нажмите на карточку для обзора
+        каждой альтернативы или вернитесь к <a href="/kak-igrat/">правилам Mines</a>.
       </p>
 
-      <h2>Чем аналоги отличаются от Mines</h2>
+      <AnalogGrid sections={analogSections} />
+
+      <h2>Где играть в аналоги</h2>
       <p>
-        В <a href="/kak-igrat/">минах</a> вы сами открываете ячейки на поле и решаете, когда нажать «Вывод». В
-        <strong>crash</strong> (Aviator, Spaceman, Pilot) множитель обычно растёт автоматически, а задача — успеть
-        забрать ставку до «краша». <strong>Plinko</strong> — шарик и случайная ячейка снизу. <strong>Chicken Rush</strong>
-        — пошаговый риск в другом сеттинге. Общее: быстрые сессии, понятный интерфейс с телефона, игра в том же
-        приложении казино, что и Mines+.
+        Те же площадки, что и для мин: раздел instant-игр, поиск по названию. Список — на странице{' '}
+        <a href="/gde-igrat/">где играть</a>. Перед депозитом — <a href="/demo/">демо Mines</a> и{' '}
+        <a href="/otzyvy/">отзывы</a>. 18+, ответственная игра.
       </p>
 
-      <h2>Какую альтернативу выбрать</h2>
-      <ul>
-        <li>
-          Нравится напряжение «ещё секунда» — смотрите <a href="/analogi/aviator/">Aviator</a> и
-          <a href="/analogi/spaceman/">Spaceman</a>.
-        </li>
-        <li>
-          Хотите оставить выбор ячеек, но другую картинку — вернитесь к
-          <a href="/demo/">демо Mines</a> или попробуйте другую версию у оператора.
-        </li>
-        <li>
-          Нужен другой тип случайности без поля 5×5 — <a href="/analogi/plinko/">Plinko</a>.
-        </li>
-        <li>
-          Ищете трендовую instant с простыми правилами — <a href="/analogi/chicken-rush/">Chicken Rush</a>.
-        </li>
-        <li>
-          Привычный запрос «пилот игра» в СНГ — <a href="/analogi/pilot/">Pilot</a>.
-        </li>
-      </ul>
-
-      <h2>Где играть в аналоги Mines</h2>
-      <p>
-        Те же площадки, что и для мин: раздел instant-игр, поиск по названию. Список операторов — на странице
-        <a href="/gde-igrat/">где играть</a>. Перед депозитом имеет смысл <a href="/demo/">потренироваться в Mines</a> и
-        прочитать <a href="/otzyvy/">отзывы</a>. Игра 18+, только на те деньги, которые готовы потерять.
+      <p class="analog-footer-links">
+        Вернуться к <a href="/">Mines</a> · <a href="/demo/">демо</a> · <a href="/gde-igrat/">где играть</a>
+        <span class="analog-age">18+</span>
       </p>
 
       <p><PlayButton /></p>

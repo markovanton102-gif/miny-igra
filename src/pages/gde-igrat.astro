@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import PlayButton from '../components/PlayButton.astro';
-import { whereToPlay } from '../config';
+import PartnerCards from '../components/PartnerCards.astro';
 
 const metaDescription =
   'Где играть в Mines (мины) онлайн: площадки с Mines+, критерии выбора казино, пополнение и вывод. Лицензия, мобильная версия и instant-игры.';
@@ -20,17 +20,7 @@ const metaDescription =
         Переход по кнопке открывает сайт оператора (18+). Сначала можно потренироваться в
         <a href="/demo/">демо</a> на нашем сайте — механика та же, без риска для баланса.
       </p>
-      <div class="card-grid">
-        {
-          whereToPlay.map((item) => (
-            <div class="card">
-              <a href={item.url} rel="nofollow sponsored noopener" target="_blank">
-                {item.name}
-              </a>
-            </div>
-          ))
-        }
-      </div>
+      <PartnerCards />
 
       <h2>Как выбрать, где играть в мины онлайн</h2>
       <p>
